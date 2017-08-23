@@ -16,13 +16,11 @@ app.get('/json/:user', function(req, res){
     axios.get('https://jsonplaceholder.typicode.com/posts')
     .then(function (response) {
         console.log("response success", response);
-        dataObject = response
+        dataObject.response = response;
     })
     .catch(function (error) {
         console.log("response error", error);
     });
-
-
 
     res.json(dataObject);
 });
