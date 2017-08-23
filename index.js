@@ -12,17 +12,14 @@ app.get('/json/:user', function(req, res){
 
     var dataObject = {};
 
-    axios.get('https://jsonplaceholder.typicode.com/posts', {
-        params: {
-            ID: 12345
-        }
-    })
+    console.log("here we are");
+    axios.get('https://jsonplaceholder.typicode.com/posts')
     .then(function (response) {
-        console.log(response);
+        console.log("response success", response);
         dataObject = response
     })
     .catch(function (error) {
-        console.log(error);
+        console.log("response error", error);
     });
 
 
